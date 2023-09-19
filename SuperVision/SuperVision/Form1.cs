@@ -35,6 +35,7 @@ namespace SuperVision
         {
             if (this.btn_picReadConnect.Text == "连接串口")
             {
+                string[]  serialPortArray = SerialPort.GetPortNames();
                 picReadSerialPort = new SerialPort();
                 picReadSerialPort.BaudRate = 115200;
                 picReadSerialPort.PortName = "COM13";

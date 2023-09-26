@@ -41,7 +41,9 @@ namespace FlashEraseTool
         private void btn_erase_Click(object sender, EventArgs e)
         {
             this.richTextBox_recv.Clear();
-
+            this.richTextBox_message.Clear();
+            this.btn_erase.Enabled = false;
+            this.btn_erase.Text = "擦除中..";
             bootModeFlag = false;
             eraseFlag = false;
             step2Flag = false;
@@ -62,6 +64,7 @@ namespace FlashEraseTool
                 if (step2Flag)
                 {
                     Console.WriteLine("开始flash擦除！");
+                    this.richTextBox_message.Text = "开始flash擦除！";
                     int index = -1;
                     Thread.Sleep(1000);
                     BootModeErase();
@@ -81,8 +84,10 @@ namespace FlashEraseTool
                     {
                         eraseFlag=false;
                         port.Close();
-                        ShowDialog();
-                        MessageBox.Show("擦除完成！");
+                        this.btn_erase.Enabled = true;
+                        this.btn_erase.Text = "擦除";
+                        //MessageBox.Show("擦除完成！");
+                        this.richTextBox_message.Text = "擦除完成！";
                         break;
                     }
 
@@ -101,7 +106,7 @@ namespace FlashEraseTool
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("位于ThreadCheckBoot线程内：" + ex.Message);
+                    MessageBox.Show("位于ThreadCheckBoot线程内：" + ex.Message,"Error",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
                 }
                 if (index >= 0)
                 {

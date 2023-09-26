@@ -34,6 +34,7 @@
             this.btn_erase = new System.Windows.Forms.Button();
             this.btn_refreshPort = new System.Windows.Forms.Button();
             this.richTextBox_recv = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_message = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lb_port
@@ -60,7 +61,7 @@
             // 
             this.btn_erase.AutoSize = true;
             this.btn_erase.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_erase.Location = new System.Drawing.Point(364, 45);
+            this.btn_erase.Location = new System.Drawing.Point(590, 45);
             this.btn_erase.Name = "btn_erase";
             this.btn_erase.Size = new System.Drawing.Size(97, 31);
             this.btn_erase.TabIndex = 2;
@@ -90,11 +91,23 @@
             this.richTextBox_recv.TabIndex = 4;
             this.richTextBox_recv.Text = "";
             // 
+            // richTextBox_message
+            // 
+            this.richTextBox_message.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.richTextBox_message.Font = new System.Drawing.Font("宋体", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox_message.ForeColor = System.Drawing.Color.Lime;
+            this.richTextBox_message.Location = new System.Drawing.Point(493, 93);
+            this.richTextBox_message.Name = "richTextBox_message";
+            this.richTextBox_message.Size = new System.Drawing.Size(288, 451);
+            this.richTextBox_message.TabIndex = 5;
+            this.richTextBox_message.Text = "";
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 566);
+            this.ClientSize = new System.Drawing.Size(804, 566);
+            this.Controls.Add(this.richTextBox_message);
             this.Controls.Add(this.richTextBox_recv);
             this.Controls.Add(this.btn_refreshPort);
             this.Controls.Add(this.btn_erase);
@@ -115,6 +128,7 @@
         private System.Windows.Forms.Button btn_erase;
         private System.Windows.Forms.Button btn_refreshPort;
         private System.Windows.Forms.RichTextBox richTextBox_recv;
+        private System.Windows.Forms.RichTextBox richTextBox_message;
     }
 }
 
